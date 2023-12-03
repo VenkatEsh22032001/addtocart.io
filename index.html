@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        body{
+            text-align: center;
+        }
+        .container{
+            display: inline-grid;
+            grid-template-columns: repeat(3,500px);
+            grid-template-rows: repeat(3,400px);
+            gap: 25px;
+        }
+        .square{
+            border: 1px solid black;
+        }
+        img{
+            height: 300px;
+            width: 496px;
+        }
+        button{
+            margin-left: 50px;
+            height: 80px;
+            width: 400px;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            font-size: 40px;
+        }
+        .cart{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            margin-left:10px ;
+            position: absolute;
+            right: -10px;
+            font-size: 65px;
+            text-align: center;
+        }
+        .cart1{
+            display: none;
+            height: 600px;
+            width: 600px;
+            background-color: lightblue ;
+            overflow: auto;
+        }
+        .display{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+        <div class="cart1">
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="square1">
+            <img src="" alt="" id="a1">
+            <button type="submit" onclick="createCart1()">Add to cart</button>
+        </div>
+        <div class="square2">
+            <img src="" alt="" id="a2">
+            <button type="submit" onclick="createCart2()">Add to cart</button>
+        </div>
+        <div class="square3">
+            <img src="" alt="" id="a3">
+            <button type="submit" onclick="createCart3()">Add to cart</button>
+        </div>
+        <div class="square4">
+            <img src="" alt="" id="a4">
+            <button type="submit" onclick="createCart4()">Add to cart</button>
+        </div>
+        <div class="square5">
+            <img src="" alt="" id="a5">
+            <button type="submit" onclick="createCart5()">Add to cart</button>
+        </div>
+        <div class="square6" >
+            <img src="" alt="" id="a6">
+            <button type="submit" onclick="createCart6()">Add to cart</button>
+        </div>
+        <div class="square7">
+            <img src="" alt="" id="a7">
+            <button type="submit" onclick="createCart7()">Add to cart</button>
+        </div>
+        <div class="square8">
+            <img src="" alt="" id="a8">
+            <button type="submit" onclick="createCart8()">Add to cart</button>
+        </div>
+        <div class="square9">
+            <img src="" alt="" id="a9">
+            <button type="submit" onclick="createCart9()">Add to cart</button>
+        </div>
+    </div>
+
+    <script>
+        let products = {
+           product1: {
+                img: '0.jpg',
+                product_name: 'Pant',
+                price:'Rs.800'
+            },
+          product2:{
+                img: '1.jpg',
+                product_name: 'Shirt',
+                price:'Rs.1000'
+            },
+          product3:{
+                img: '2.jpg',
+                product_name: 'Pen',
+                price:'Rs.200'
+            },
+          product4:{
+                img: '3.jpg',
+                product_name: 'Books',
+                price:'Rs.300'
+            },
+           product5: {
+                img: '4.jpg',
+                product_name: 'Cosmetic',
+                price:'Rs.2000'
+            },
+           product6:{
+                img: '5.jpg',
+                product_name: 'Camera',
+                price:'Rs.25000'
+            },
+            product7:{
+                img: '6.jpg',
+                product_name: 'Grocery',
+                price:'Rs.5000'
+            },
+            product8:{
+                img:'7.jpg',
+                product_name:'Head_Phone',
+                price:'Rs.8000'
+            },
+            product9:{
+                img:'8.jpg',
+                product_name:'I-phone',
+                price:'Rs.80000'
+            },
+        }
+       
+
+        document.getElementsByClassName('cart')[0].addEventListener('click',function(){
+            document.getElementsByClassName('cart1')[0].classList.toggle('display')
+        })
+        // console.log(products[0]['img'])
+        for(let i=0;i<=10;i+=1){
+        let pic = document.getElementsByTagName('img')[i]
+        pic.setAttribute('src',i+'.jpg')
+        }
+      
+
+        function createCart1(){ 
+        let cr1 = document.createElement('img')
+        cr1.setAttribute('src',products['product1']['img'])
+        document.getElementsByClassName('cart1')[0].appendChild(cr1)
+        document.getElementsByClassName('cart1')[0].append(products['product1']['product_name'])
+        document.getElementsByClassName('cart1')[0].append(products['product1']['price'])
+        }
+        function createCart2(){
+            let cr2 = document.createElement('img')
+            cr2.setAttribute('src',products['product2']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr2)
+            document.getElementsByClassName('cart1')[0].append(products['product2']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product2']['price'])
+        }
+        function createCart3(){
+            let cr3 = document.createElement('img')
+            cr3.setAttribute('src',products['product3']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr3)
+            document.getElementsByClassName('cart1')[0].append(products['product3']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product3']['price'])
+        }
+        function createCart4(){
+            let cr4 = document.createElement('img')
+            cr4.setAttribute('src',products['product4']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr4)
+            document.getElementsByClassName('cart1')[0].append(products['product4']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product4']['price'])
+        }
+        function createCart5(){
+            let cr5 = document.createElement('img')
+            cr5.setAttribute('src',products['product5']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr5)
+            document.getElementsByClassName('cart1')[0].append(products['product5']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product5']['price'])
+        }
+        function createCart6(){
+            let cr6 = document.createElement('img')
+            cr6.setAttribute('src',products['product6']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr6)
+            document.getElementsByClassName('cart1')[0].append(products['product6']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product6']['price'])
+        }
+        function createCart7(){
+            let cr7 = document.createElement('img')
+            cr7.setAttribute('src',products['product7']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr7)
+            document.getElementsByClassName('cart1')[0].append(products['product7']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product7']['price'])
+        }
+        function createCart8(){
+            let cr8 = document.createElement('img')
+            cr8.setAttribute('src',products['product8']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr8)
+            document.getElementsByClassName('cart1')[0].append(products['product8']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product8']['price'])
+        }
+        function createCart9(){
+            let cr9 = document.createElement('img')
+            cr9.setAttribute('src',products['product9']['img'])
+            document.getElementsByClassName('cart1')[0].appendChild(cr9)
+            document.getElementsByClassName('cart1')[0].append(products['product9']['product_name'])
+            document.getElementsByClassName('cart1')[0].append(products['product9']['price'])
+        }
+    </script>
+</body>
+</html>
